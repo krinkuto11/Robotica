@@ -46,7 +46,7 @@ Esta documentación incluye los pasos que ya aparecen en la documentación origi
 
 # Instalar Windows Subsystem for Linux
 
-## Parte 1: Instalar Windows Terminal<br/>
+**Parte 1: Instalar Windows Terminal**<br/>
 
 Para facilitar la interacción con esta capa de compatibilidad, lo primero es instalar la Windows Terminal. Esto se puede realizar desde la Windows Store (Requiere cuenta de Microsoft) [aquí](https://apps.microsoft.com/detail/9n0dx20hk701?hl=es-ES&gl=ES) o desde Github:
    1. Ir al repositorio de GitHub https://github.com/microsoft/terminal/releases y buscar la "Latest"
@@ -58,7 +58,7 @@ Para facilitar la interacción con esta capa de compatibilidad, lo primero es in
 
 # Instalar Windows Subsystem for Linux
 
-## Parte 2: Instalar WSL<br/>
+**Parte 2: Instalar WSL**<br/>
 
 
 Instalar WSL2 nos permitirá tener acceso a una shell de Linux sin la necesidad de crear una máquina virtual. 
@@ -66,8 +66,8 @@ Para instalar WSL2 hay que iniciar PowerShell como administrador
    1. Abrir Terminal
    2. Ejecutar el siguiente comando ```wsl --install```. Esto habilitará las características de Windows necesarias.
    3. Cuando acabe el proceso, reinciar el sistema.
-   4. Tras reiniciar, volver a iniciar Terminal y ejecutar ```wsl --install``. Esto instalará Ubuntu como Distro y pedirá la configuración de las credenciales de inicio.
-   5. Al terminar, quedará abierta una sesión de bash de ubuntu. Para volver a acceder al volver a iniciar la Terminal, hacer seleccionar el perfil Ubuntu desde el selector de perfiles (botón ```⌄```)
+   4. Tras reiniciar, volver a iniciar Terminal y ejecutar ```wsl --install```. Esto instalará Ubuntu como Distro y pedirá la configuración de las credenciales de inicio.
+   5. Al terminar, quedará abierta una sesión de bash de ubuntu. Para volver a acceder al volver a iniciar la Terminal, hacer seleccionar el perfil Ubuntu desde el selector de perfiles (botón a la derecha del "+")
 
 ---
 
@@ -76,7 +76,7 @@ Para instalar WSL2 hay que iniciar PowerShell como administrador
 ---
 
 # Instalar Webots
-Vamos a instalar Webots en el host (Windows) para poder aprovechar la aceleración por hardware de la GPU.
+Vamos a instalar Webots en el host (Windows) para poder aprovechar la aceleración por hardware de la GPU.<br/>
 Descargar Webots desde el siguiente enlace e instalar: https://cyberbotics.com/#download
 
 ---
@@ -122,5 +122,15 @@ export WEBOTS_HOME=/mnt/c/Program\ Files/Webots
 ````
 **PD:** Para que esto surta efecto, hay que cerrar la sesión de terminal actual y abrir una nueva.
 
+---
+# Instalar ROS2
+
+**Parte 3: Probar el funcionamiento**
+
+En Ubuntu:
+1. ```source /opt/ros/jazzy/setup.bash```
+2. ```ros2 launch webots_ros2_tesla robot_launch.py```<br/>
+
+Esto iniciará Webots y empezará a funcionar una simulación de un Tesla.
 
 
