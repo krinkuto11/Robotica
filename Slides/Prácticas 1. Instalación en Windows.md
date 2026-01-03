@@ -98,10 +98,20 @@ sudo dpkg -i /tmp/ros2-apt-source.deb
 
 **Parte 2: Instalar ROS2**
 
-Instalamos ROS2 y las herramientas de desarrollo:
+1. Instalamos ROS2 y las herramientas de desarrollo:
 ```
 sudo apt update && sudo apt install ros-dev-tools && sudo apt install ros-jazzy-ros-base
 ```
+
+2. Instalar paquete ```webots_ros2```:
+```
+sudo apt-get install ros-jazzy-webots-ros2
+```
+3. Añadir la siguiente línea a nuestro ```.bashrc```
+```
+export WEBOTS_HOME=/mnt/c/Program\ Files/Webots
+````
+**PD:** Esto indica a webots_ros2 en qué directorio de Windows está instalado Webots, para que esto tenga efecto, hay que cerrar la sesión de terminal actual y abrir una nueva.
 
 
 
