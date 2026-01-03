@@ -33,9 +33,9 @@ math: mathjax
 
 ---
 
-# ¿Por qué no utilizar una máquina virtual<sup>1</sup>?
+# ¿Por qué no utilizar una máquina virtual?
 
-Debido a que ROS2 no está disponible para Windows y que Webots necesita utilizar de forma exhaustiva la GPU, instalar ROS2 en WSL y Webots en el host.
+Debido a que ROS2 no está disponible para Windows y que Webots necesita utilizar de forma exhaustiva la GPU, instalar ROS2 en WSL y Webots en el host es el método oficialmente recomendado.<br/>
 Esta documentación incluye los pasos que ya aparecen en la documentación original de ROS2: https://docs.ros.org/en/jazzy/Tutorials/Advanced/Simulators/Webots/Installation-Windows.html
 
 ---
@@ -44,20 +44,30 @@ Esta documentación incluye los pasos que ya aparecen en la documentación origi
 
 ---
 
-# Instalar Windows Subsystem for Linux<sup>1</sup>?
+# Instalar Windows Subsystem for Linux
+
+## Parte 1: Instalar Windows Terminal<br/>
 
 Para facilitar la interacción con esta capa de compatibilidad, lo primero es instalar la Windows Terminal. Esto se puede realizar desde la Windows Store (Requiere cuenta de Microsoft) [aquí](https://apps.microsoft.com/detail/9n0dx20hk701?hl=es-ES&gl=ES) o desde Github:
    1. Ir al repositorio de GitHub https://github.com/microsoft/terminal/releases y buscar la "Latest"
    2. En la sección Assets y buscar el fichero con la extensión .msixbundle (A secas). Descargar, abrir y proceder con la instalación.
    3. Para facilitar las operaciones con PowerShell, se va a habilitar el modo administrador. Acceder a la configuración pulsando Control y "," al mismo tiempo. En la sección Perfiles/Windows PowerShell, habilitar la función "Ejecutar este perfil como Administrador" y guardar.
-  
+
+
+---
+
+# Instalar Windows Subsystem for Linux
+
+## Parte 2: Instalar WSL<br/>
+
+
 Instalar WSL2 nos permitirá tener acceso a una shell de Linux sin la necesidad de crear una máquina virtual. 
 Para instalar WSL2 hay que iniciar PowerShell como administrador
    1. Abrir Terminal
-   1. Ejecutar el siguiente comando ```wsl --install```. Esto habilitará las características de Windows necesarias.
-   2. Cuando acabe el proceso, reinciar el sistema.
-   3. Tras reiniciar, volver a iniciar Terminal y ejecutar ```wsl --install``. Esto instalará Ubuntu como Distro y pedirá la configuración de las credenciales de inicio.
-   4. Al terminar, quedará abierta una sesión de bash de ubuntu. Para volver a acceder al volver a iniciar la Terminal, hacer seleccionar el perfil Ubuntu desde el selector de perfiles (botón ```⌄```)
+   2. Ejecutar el siguiente comando ```wsl --install```. Esto habilitará las características de Windows necesarias.
+   3. Cuando acabe el proceso, reinciar el sistema.
+   4. Tras reiniciar, volver a iniciar Terminal y ejecutar ```wsl --install``. Esto instalará Ubuntu como Distro y pedirá la configuración de las credenciales de inicio.
+   5. Al terminar, quedará abierta una sesión de bash de ubuntu. Para volver a acceder al volver a iniciar la Terminal, hacer seleccionar el perfil Ubuntu desde el selector de perfiles (botón ```⌄```)
 
 ---
 
@@ -65,13 +75,13 @@ Para instalar WSL2 hay que iniciar PowerShell como administrador
 
 ---
 
-# Instalar Webots<sup>1</sup>?
+# Instalar Webots
 Vamos a instalar Webots en el host (Windows) para poder aprovechar la aceleración por hardware de la GPU.
 Descargar Webots desde el siguiente enlace e instalar: https://cyberbotics.com/#download
 
 ---
 
-# Instalar ROS2<sup>1</sup>?
+# Instalar ROS2
 
 ROS2 funcionará desde Linux, entonces las siguientes instrucciones se deben de ejecutar en el perfil Ubuntu de la Windows Terminal.
 Las instrucciones originales se pueden encontrar en: https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html
@@ -94,7 +104,7 @@ sudo dpkg -i /tmp/ros2-apt-source.deb
 
 ---
 
-# Instalar ROS2<sup>1</sup>?
+# Instalar ROS2
 
 **Parte 2: Instalar ROS2**
 
@@ -102,7 +112,6 @@ sudo dpkg -i /tmp/ros2-apt-source.deb
 ```
 sudo apt update && sudo apt install ros-dev-tools && sudo apt install ros-jazzy-ros-base
 ```
-
 2. Instalar paquete ```webots_ros2```:
 ```
 sudo apt-get install ros-jazzy-webots-ros2
@@ -111,7 +120,7 @@ sudo apt-get install ros-jazzy-webots-ros2
 ```
 export WEBOTS_HOME=/mnt/c/Program\ Files/Webots
 ````
-**PD:** Esto indica a webots_ros2 en qué directorio de Windows está instalado Webots, para que esto tenga efecto, hay que cerrar la sesión de terminal actual y abrir una nueva.
+**PD:** Para que esto surta efecto, hay que cerrar la sesión de terminal actual y abrir una nueva.
 
 
 
