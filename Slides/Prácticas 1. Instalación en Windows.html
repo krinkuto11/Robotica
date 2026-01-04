@@ -114,6 +114,8 @@ Para instalar WSL2 hay que iniciar PowerShell como administrador</p>
 <h1>Instalar Webots</h1>
 <p>Vamos a instalar Webots en el host (Windows) para poder aprovechar la aceleración por hardware de la GPU.<br /><br />
 Descargar Webots desde el siguiente enlace e instalar: <a href="https://cyberbotics.com/#download">https://cyberbotics.com/#download</a></p>
+<p><strong>Importante</strong>: Si el firewall de Windows está activado, es importante añadir una excepción para que ROS2 pueda comunicarse con Webots. Para esto, ir a Firewall de Windows Defender &gt; &quot;Permitir que una aplicación o una característica a través de Firewall de Windows Defender&quot;. Ahí buscar &quot;webots-bin&quot; y dejar activadas todas las opciones. <br /><br />
+De no estar presente, hacer click en Cambiar Configuración y Permitir otra aplicación. Añadir ahí el ejecutable .exe que ese encuentra en C:/Program Files/Webots.</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="etsisi" data-marpit-pagination="9" data-marpit-pagination-total="11" style="--paginate:true;--theme:etsisi;">
 <h1>Instalar ROS2</h1>
